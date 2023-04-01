@@ -1,6 +1,6 @@
 import assetHeroImage from '../images/oc-gonzalez-PDgZtSrgM6M-unsplash.jpg';
 
-function createMenu(parent = document.body, ...items) {
+function createMenu(...items) {
   const menu = document.createElement('menu');
 
   items.forEach((item) => {
@@ -10,14 +10,19 @@ function createMenu(parent = document.body, ...items) {
     menu.appendChild(li);
   });
 
-  parent.appendChild(menu);
+  return menu;
 }
 
-function createNav(parent = document.body) {
+function createNav() {
   const nav = document.createElement('nav');
-  parent.appendChild(nav);
+  return nav;
 }
 
 function createHeader() {
   const header = document.createElement('header');
+  return header;
+}
+
+function render() {
+  const container = document.querySelector('#content');
 }
