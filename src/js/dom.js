@@ -23,6 +23,22 @@ function createHeader() {
   return header;
 }
 
+function createHeading(level, text) {
+  const heading = document.createElement(`h${level}`);
+  heading.textContent = text;
+  return heading;
+}
+
 function render() {
   const container = document.querySelector('#content');
+  const header = createHeader();
+  const h1 = createHeading(1, 'Grumpy Cook');
+  header.appendChild(h1);
+  const nav = createNav();
+  header.appendChild(nav);
+  const menu = createMenu('Home', 'Menu', 'Contact');
+  nav.appendChild(menu);
+  container.appendChild(header);
 }
+
+export default render;
