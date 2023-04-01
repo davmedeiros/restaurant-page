@@ -40,6 +40,24 @@ function assembleHeader() {
   return header;
 }
 
+function createImage(id, alt, src) {
+  const image = new Image();
+
+  if (id) image.id = id;
+
+  image.alt = alt;
+  image.src = src;
+  return image;
+}
+
+function createFigure(id) {
+  const figure = document.createElement('figure');
+
+  if (id) figure.id = id;
+
+  return figure;
+}
+
 function render() {
   const container = document.querySelector('#content');
   container.appendChild(assembleHeader());
