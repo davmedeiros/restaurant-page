@@ -1,6 +1,5 @@
 import 'normalize.css';
 import '../css/style.css';
-import HERO_IMAGE from '../images/oc-gonzalez-PDgZtSrgM6M-unsplash.jpg';
+import render from './dom';
 
-const image = document.querySelector('#hero-image');
-image.src = HERO_IMAGE;
+render();
