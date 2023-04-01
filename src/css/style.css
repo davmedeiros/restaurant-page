@@ -46,6 +46,8 @@ h2 {
 
 main {
   padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 menu {
@@ -79,18 +81,39 @@ a {
 
 #hero {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 20px 100px 10px 10px;
+  background-color: var(--secondary-color);
+  overflow: hidden;
+  gap: 20px;
+  padding-left: 20px;
+}
+
+#hero-text {
+  display: grid;
+  place-items: center;
 }
 
 #hero-figure {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 300px;
+  grid-template-rows: 1fr;
+  margin: 0;
+  justify-self: end;
+  object-fit: cover;
+  gap: 5px;
 }
 
 #hero-image {
-  height: 100%;
-  aspect-ratio: 2 / 1;
-  border-radius: 50% 50% 50% 10px;
+  max-height: 100%;
+  max-width: 100%;
   object-fit: cover;
+  border-bottom-left-radius: 50%;
+}
+
+#hero-figure > figcaption {
+  background-color: white;
+  padding: 5px;
+  border-right: 5px solid var(--secondary-color);
+  border-bottom: 5px solid var(--secondary-color);
+  border-radius: 20px;
 }
