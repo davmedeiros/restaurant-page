@@ -18,19 +18,18 @@ function createNav() {
   return nav;
 }
 
-function createHeader() {
-  const header = document.createElement('header');
-  return header;
-}
-
 function createHeading(level, text) {
   const heading = document.createElement(`h${level}`);
   heading.textContent = text;
   return heading;
 }
 
-function render() {
-  const container = document.querySelector('#content');
+function createHeader() {
+  const header = document.createElement('header');
+  return header;
+}
+
+function assembleHeader() {
   const header = createHeader();
   const h1 = createHeading(1, 'Grumpy Cook');
   header.appendChild(h1);
@@ -38,7 +37,12 @@ function render() {
   header.appendChild(nav);
   const menu = createMenu('Home', 'Menu', 'Contact');
   nav.appendChild(menu);
-  container.appendChild(header);
+  return header;
+}
+
+function render() {
+  const container = document.querySelector('#content');
+  container.appendChild(assembleHeader());
 }
 
 export default render;
