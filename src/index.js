@@ -1,3 +1,4 @@
+import 'normalize.css';
 import './style.css';
 
 const element = document.createElement('h1');
