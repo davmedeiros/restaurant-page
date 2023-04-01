@@ -40,12 +40,24 @@ h1 {
   font-size: 3rem;
 }
 
+h2 {
+  font-size: 5rem;
+}
+
+main {
+  padding: 20px;
+}
+
 menu {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   list-style: none;
   gap: 20px;
   padding: 0;
+}
+
+a {
+  color: var(--attention-color);
 }
 
 .tab {
@@ -63,4 +75,22 @@ menu {
 
 .tab.active {
   background-color: var(--attention-color);
+}
+
+#hero {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+#hero-figure {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 300px;
+}
+
+#hero-image {
+  height: 100%;
+  aspect-ratio: 2 / 1;
+  border-radius: 50% 50% 50% 10px;
+  object-fit: cover;
 }
