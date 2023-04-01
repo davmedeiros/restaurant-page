@@ -60,3 +60,7 @@ menu {
   font-size: 2rem;
   border-radius: 30px 30px 30px 10px;
 }
+
+.tab.active {
+  background-color: var(--attention-color);
+}
