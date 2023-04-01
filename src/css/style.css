@@ -20,10 +20,43 @@
 }
 
 :root {
-  font-family: 'Dancing Script';
   --base-color: #cad3f5;
   --main-color: #f5a97f;
   --secondary-color: #eed49f;
   --attention-color: #7dc4e4;
   --text-color: #24273a;
+  font-family: 'Dancing Script';
+  color: var(--text-color);
+}
+
+header {
+  background-color: var(--main-color);
+  display: grid;
+  grid-template-rows: 80px;
+  place-items: center;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+}
+
+.tab {
+  text-decoration: none;
+  color: var(--text-color);
+  background-color: var(--secondary-color);
+  height: 60px;
+  width: 120px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  border-radius: 30px 30px 30px 10px;
 }
