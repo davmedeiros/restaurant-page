@@ -40,8 +40,23 @@ function assembleHeader() {
   return header;
 }
 
-function createImage(id, alt, src) {
-  const image = new Image();
+function createDiv(id) {
+  const div = document.createElement('div');
+
+  if (id) div.id = id;
+
+  return div;
+}
+
+function createFigcaption(text) {
+  const figcaption = document.createElement('figcaption');
+  // TODO: Create logic for processing hyperlinks
+  figcaption.textContent = text;
+  return figcaption;
+}
+
+function createImage(id, src, alt) {
+  const image = document.createElement('img');
 
   if (id) image.id = id;
 
@@ -58,9 +73,40 @@ function createFigure(id) {
   return figure;
 }
 
+function createSection(id) {
+  const section = document.createElement('section');
+
+  if (id) section.id = id;
+
+  return section;
+}
+
+function createMain() {
+  const main = document.createElement('main');
+  return main;
+}
+
+function assembleMain() {
+  const main = createMain();
+  const section = createSection('hero');
+  main.appendChild(section);
+  const div = createDiv('hero-text');
+  section.appendChild(div);
+  const h2 = createHeading(2, 'The grumpiest seafood in town!');
+  div.appendChild(h2);
+  const figure = createFigure('hero-figure');
+  section.appendChild(figure);
+  const img = createImage('hero-image', assetHeroImage, 'Grumpy fish');
+  figure.appendChild(img);
+  const figcaption = createFigcaption('Photo by OC Gonzales on Unsplash');
+  figure.appendChild(figcaption);
+  return main;
+}
+
 function render() {
   const container = document.querySelector('#content');
   container.appendChild(assembleHeader());
+  container.appendChild(assembleMain());
 }
 
 export default render;
