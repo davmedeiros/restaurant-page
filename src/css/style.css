@@ -21,4 +21,9 @@
 
 :root {
   font-family: 'Dancing Script';
+  --base-color: #cad3f5;
+  --main-color: #f5a97f;
+  --secondary-color: #eed49f;
+  --attention-color: #7dc4e4;
+  --text-color: #24273a;
 }
