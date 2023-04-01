@@ -38,28 +38,28 @@ function createImage(id, src, alt) {
 
 function assembleHeader() {
   const header = createElement('header');
-  const h1 = createElement(1, 'Grumpy Cook');
+  const h1 = createElement('h1', 'Grumpy Cook');
   header.appendChild(h1);
-  const nav = createNav();
+  const nav = createElement('nav');
   header.appendChild(nav);
-  const menu = createMenu('Home', 'Menu', 'Contact');
+  const menu = createMenu('tab', 'Home', 'Menu', 'Contact');
   nav.appendChild(menu);
   return header;
 }
 
 function assembleMain() {
-  const main = createMain();
-  const section = createSection('hero');
+  const main = createElement('main');
+  const section = createElement('section', undefined, 'hero');
   main.appendChild(section);
-  const div = createDiv('hero-text');
+  const div = createElement('div', undefined, 'hero-text');
   section.appendChild(div);
-  const h2 = createHeading(2, 'The grumpiest seafood in town!');
+  const h2 = createElement('h2', 'The grumpiest seafood in town!');
   div.appendChild(h2);
-  const figure = createFigure('hero-figure');
+  const figure = createElement('figure', undefined, 'hero-figure');
   section.appendChild(figure);
   const img = createImage('hero-image', assetHeroImage, 'Grumpy fish');
   figure.appendChild(img);
-  const figcaption = createFigcaption('Photo by OC Gonzales on Unsplash');
+  const figcaption = createElement('figcaption', 'Photo by OC Gonzales on Unsplash');
   figure.appendChild(figcaption);
   return main;
 }
