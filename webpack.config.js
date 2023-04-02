@@ -9,6 +9,8 @@ module.exports = {
     render: './src/js/render.js',
     header: './src/js/header.js',
     home: './src/js/home.js',
+    menu: './src/js/menu.js',
+    contact: './src/js/contact.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
