@@ -1,6 +1,7 @@
 import assembleContact from './contact';
 import assembleHeader from './header';
 import assembleHome from './home';
+import assembleMenu from './menu';
 
 function createElement(type, text, id, ...htmlClasses) {
   const element = document.createElement(type);
@@ -31,6 +32,9 @@ function switchTab(item) {
   switch (item) {
     case 'Home':
       container.appendChild(assembleHome());
+      break;
+    case 'Menu':
+      container.appendChild(assembleMenu());
       break;
     case 'Contact':
       container.appendChild(assembleContact());
