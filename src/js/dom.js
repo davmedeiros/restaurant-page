@@ -11,6 +11,10 @@ function createElement(type, text, id, ...htmlClasses) {
   return element;
 }
 
+function switchTab(clicked, functionToBind) {
+  clicked.target.classList.add('active');
+}
+
 function createMenu(htmlClass, ...items) {
   const menu = document.createElement('menu');
 
@@ -18,6 +22,7 @@ function createMenu(htmlClass, ...items) {
     const li = document.createElement('li');
     li.classList.add(htmlClass);
     li.textContent = item;
+    li.addEventListener('click', switchTab);
     menu.appendChild(li);
   });
 
