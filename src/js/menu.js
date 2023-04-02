@@ -1,4 +1,15 @@
-import { createElement } from './dom';
+function createElement(type, text, id, ...htmlClasses) {
+  const element = document.createElement(type);
+  element.textContent = text;
+
+  htmlClasses.forEach((htmlClass) => {
+    element.classList.add(htmlClass);
+  });
+
+  if (id) element.id = id;
+
+  return element;
+}
 
 function assembleMenu() {
   const main = createElement('main');

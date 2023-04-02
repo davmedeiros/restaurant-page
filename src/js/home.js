@@ -1,5 +1,27 @@
 import assetHeroImage from '../images/oc-gonzalez-PDgZtSrgM6M-unsplash.jpg';
-import { createElement, createImage } from './dom';
+
+function createElement(type, text, id, ...htmlClasses) {
+  const element = document.createElement(type);
+  element.textContent = text;
+
+  htmlClasses.forEach((htmlClass) => {
+    element.classList.add(htmlClass);
+  });
+
+  if (id) element.id = id;
+
+  return element;
+}
+
+function createImage(id, src, alt) {
+  const image = document.createElement('img');
+
+  if (id) image.id = id;
+
+  image.alt = alt;
+  image.src = src;
+  return image;
+}
 
 function assembleHome() {
   const main = createElement('main');
