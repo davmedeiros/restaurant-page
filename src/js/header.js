@@ -1,19 +1,7 @@
 import assembleHome from './home';
 import assembleContact from './contact';
 import assembleMenu from './menu';
-
-function createElement(type, text, id, ...htmlClasses) {
-  const element = document.createElement(type);
-  element.textContent = text;
-
-  htmlClasses.forEach((htmlClass) => {
-    element.classList.add(htmlClass);
-  });
-
-  if (id) element.id = id;
-
-  return element;
-}
+import createElement from './element';
 
 function switchTab(item) {
   const container = document.querySelector('#content');
