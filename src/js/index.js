@@ -2,4 +2,5 @@ import 'normalize.css';
 import '../css/style.css';
 import render from './render';
 
+render('header');
 render('home');

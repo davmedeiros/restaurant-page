@@ -3,10 +3,16 @@ import assembleHeader from './header';
 
 function render(page) {
   const container = document.querySelector('#content');
-  container.appendChild(assembleHeader());
 
-  if (page === 'home') {
-    container.appendChild(assembleHome());
+  switch (page) {
+    case 'header':
+      container.appendChild(assembleHeader());
+      break;
+    case 'home':
+      container.appendChild(assembleHome());
+      break;
+    default:
+      break;
   }
 }
 
