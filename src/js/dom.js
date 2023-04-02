@@ -1,5 +1,3 @@
-import assetHeroImage from '../images/oc-gonzalez-PDgZtSrgM6M-unsplash.jpg';
-
 function createElement(type, text, id, ...htmlClasses) {
   const element = document.createElement(type);
   element.textContent = text;
@@ -36,38 +34,4 @@ function createImage(id, src, alt) {
   return image;
 }
 
-function assembleHeader() {
-  const header = createElement('header');
-  const h1 = createElement('h1', 'Grumpy Cook');
-  header.appendChild(h1);
-  const nav = createElement('nav');
-  header.appendChild(nav);
-  const menu = createMenu('tab', 'Home', 'Menu', 'Contact');
-  nav.appendChild(menu);
-  return header;
-}
-
-function assembleMain() {
-  const main = createElement('main');
-  const section = createElement('section', undefined, 'hero');
-  main.appendChild(section);
-  const div = createElement('div', undefined, 'hero-text');
-  section.appendChild(div);
-  const h2 = createElement('h2', 'The grumpiest seafood in town!');
-  div.appendChild(h2);
-  const figure = createElement('figure', undefined, 'hero-figure');
-  section.appendChild(figure);
-  const img = createImage('hero-image', assetHeroImage, 'Grumpy fish');
-  figure.appendChild(img);
-  const figcaption = createElement('figcaption', 'Photo by OC Gonzales on Unsplash');
-  figure.appendChild(figcaption);
-  return main;
-}
-
-function render() {
-  const container = document.querySelector('#content');
-  container.appendChild(assembleHeader());
-  container.appendChild(assembleMain());
-}
-
-export default render;
+export { createElement, createImage, createMenu };

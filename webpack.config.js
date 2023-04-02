@@ -6,6 +6,8 @@ module.exports = {
   entry: {
     index: './src/js/index.js',
     dom: './src/js/dom.js',
+    render: './src/js/render.js',
+    header: './src/js/header.js',
     home: './src/js/home.js',
   },
   plugins: [

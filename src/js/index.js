@@ -1,5 +1,5 @@
 import 'normalize.css';
 import '../css/style.css';
-import render from './dom';
+import render from './render';
 
-render();
+render('home');
