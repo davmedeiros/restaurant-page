@@ -1,6 +1,10 @@
 import 'normalize.css';
 import '../css/style.css';
-import render from './render';
+import assembleHeader from './header';
 
-render('header');
-render('home');
+function loadPage() {
+  const container = document.querySelector('#content');
+  container.appendChild(assembleHeader());
+}
+
+loadPage();

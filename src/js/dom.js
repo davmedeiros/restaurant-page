@@ -1,3 +1,7 @@
+import assembleContact from './contact';
+import assembleHeader from './header';
+import assembleHome from './home';
+
 function createElement(type, text, id, ...htmlClasses) {
   const element = document.createElement(type);
   element.textContent = text;
@@ -11,18 +15,41 @@ function createElement(type, text, id, ...htmlClasses) {
   return element;
 }
 
-function switchTab(clicked, functionToBind) {
-  clicked.target.classList.add('active');
+function switchTab(item) {
+  const container = document.querySelector('#content');
+  const main = document.querySelector('main');
+  const header = document.querySelector('header');
+
+  if (main) {
+    main.remove();
+  }
+
+  if (!header) {
+    container.appendChild(assembleHeader());
+  }
+
+  switch (item) {
+    case 'Home':
+      container.appendChild(assembleHome());
+      break;
+    case 'Contact':
+      container.appendChild(assembleContact());
+      break;
+    default:
+      break;
+  }
 }
 
-function createMenu(htmlClass, ...items) {
+function createMenu(htmlClass, items) {
   const menu = document.createElement('menu');
 
   items.forEach((item) => {
     const li = document.createElement('li');
     li.classList.add(htmlClass);
     li.textContent = item;
-    li.addEventListener('click', switchTab);
+    li.addEventListener('click', () => {
+      switchTab(item);
+    });
     menu.appendChild(li);
   });
 

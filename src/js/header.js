@@ -1,4 +1,6 @@
 import { createElement, createMenu } from './dom';
+import assembleHome from './home';
+import assembleContact from './contact';
 
 function assembleHeader() {
   const header = createElement('header');
@@ -6,7 +8,8 @@ function assembleHeader() {
   header.appendChild(h1);
   const nav = createElement('nav');
   header.appendChild(nav);
-  const menu = createMenu('tab', 'Home', 'Menu', 'Contact');
+  const functions = [assembleHome, assembleContact];
+  const menu = createMenu('tab', ['Home', 'Menu', 'Contact'], functions);
   nav.appendChild(menu);
   return header;
 }
