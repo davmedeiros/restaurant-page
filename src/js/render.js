@@ -11,6 +11,9 @@ function render(page) {
     case 'home':
       container.appendChild(assembleHome());
       break;
+    case 'contact':
+      container.appendChild(assembleHome());
+      break;
     default:
       break;
   }
