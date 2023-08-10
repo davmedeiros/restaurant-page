@@ -5,7 +5,13 @@ const clearContainer = (container) => {
 }
 
 const switchTab = (clicked) => {
-    clicked.target.classList.add('active');
+    const tabs = document.querySelectorAll('nav button');
+
+    tabs.forEach(tab => {
+        tab.classList.remove('active');
+    });
+
+    clicked.target.classList.toggle('active');
 }
 
 const buildHeader = (container, ...tabs) => {   
