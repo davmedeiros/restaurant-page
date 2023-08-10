@@ -7,6 +7,7 @@ module.exports = {
         index: './src/js/index.js',
         pageLoad: './src/js/page-load.js',
     },
+    devtool: 'inline-source-map',
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',

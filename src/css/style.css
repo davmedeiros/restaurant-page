@@ -83,3 +83,9 @@ main h1 {
     width: 40%;
     text-align: justify;
 }
+
+.dish {
+    height: 512px;
+    width: 100%;
+    background-color: var(--color-brand-alpha);
+}
