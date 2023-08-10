@@ -17,6 +17,9 @@ const buildHome = (container) => {
 const buildMenu = (container) => {
     const dish = document.createElement('div');
     dish.classList.add('dish');
+    const placeholder = document.createElement('p');
+    placeholder.textContent = 'Imagine lots of vegetables here...';
+    dish.appendChild(placeholder);
     container.appendChild(dish);
 }
 
