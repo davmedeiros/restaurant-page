@@ -16,3 +16,24 @@
     --color-brand-psi: #f4a261;
     --color-brand-omega: #e76f51;
 }
+
+body {
+    min-height: 100svh;
+    display: grid;
+    grid-template: 100px auto / 1fr 2fr 1fr;
+}
+
+header {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    display: grid;
+    justify-content: center;
+    align-items: end;
+}
+
+nav {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 170px;
+    gap: 30px;
+}
