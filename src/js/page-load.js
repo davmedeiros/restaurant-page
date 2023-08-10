@@ -4,6 +4,10 @@ const clearContainer = (container) => {
     }
 }
 
+const switchTab = (clicked) => {
+    clicked.target.classList.add('active');
+}
+
 const buildHeader = (container, ...tabs) => {   
     const header = document.createElement('header');
     const nav = document.createElement('nav');
@@ -12,6 +16,7 @@ const buildHeader = (container, ...tabs) => {
         const button = document.createElement('button');
         button.id = tab;
         button.textContent = tab.toUpperCase();
+        button.addEventListener('click', switchTab);
         nav.appendChild(button);
     });
 
