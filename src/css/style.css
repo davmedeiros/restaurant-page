@@ -15,25 +15,29 @@
     --color-brand-gamma: #e9c46a;
     --color-brand-psi: #f4a261;
     --color-brand-omega: #e76f51;
+    --size-gap: 32px;
+}
+
+body,
+header,
+nav {
+    display: grid;
 }
 
 body {
     min-height: 100svh;
-    display: grid;
     grid-template: 100px auto / 1fr 2fr 1fr;
 }
 
 header {
     grid-column: 1 / -1;
     grid-row: 1 / 2;
-    display: grid;
     justify-content: center;
     align-items: end;
 }
 
 nav {
-    display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 170px;
-    gap: 30px;
+    gap: var(--size-gap);
 }
