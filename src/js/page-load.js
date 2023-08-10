@@ -19,10 +19,22 @@ const buildHeader = (container, ...tabs) => {
     container.appendChild(header);
 }
 
+const buildHome = (container) => {
+    const main = document.createElement('main');
+    const h1 = document.createElement('h1');
+    h1.textContent = 'Welcome to Veggieterra';
+    const about = document.createElement('p');
+    about.id = 'about';
+    main.appendChild(h1);
+    main.appendChild(about);
+    container.appendChild(main);
+}
+
 const loadPage = (page) => {
     const container = document.querySelector('body');
     clearContainer(container);
     buildHeader(container, 'home', 'menu', 'contact');
+    buildHome(container);
 }
 
 export { loadPage };
