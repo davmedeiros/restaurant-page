@@ -5,6 +5,7 @@ module.exports = {
     mode: 'development',
     entry: {
         index: './src/js/index.js',
+        pageLoad: './src/js/page-load.js',
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -12,7 +13,7 @@ module.exports = {
         }),
     ],
     output: {
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
     },
