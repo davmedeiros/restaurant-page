@@ -23,6 +23,23 @@ const buildMenu = (container) => {
     container.appendChild(dish);
 }
 
+const buildContact = (container) => {
+    const h2 = document.createElement('h2');
+    h2.textContent = 'Contact instructions:';
+    const steps = document.createElement('ol');
+    const step1 = document.createElement('li');
+    const step2 = document.createElement('li');
+    const step3 = document.createElement('li');
+    step1.textContent = 'Look at the mirror with a candle and spin 3 times.';
+    step2.textContent = 'Scream "GIVE ME ALL THE VEGGIES!"';
+    step3.textContent = 'Wait until the next morning.';
+    steps.appendChild(step1);
+    steps.appendChild(step2);
+    steps.appendChild(step3);
+    container.appendChild(h2);
+    container.appendChild(steps);
+}
+
 const switchTab = (clicked, tab, tabs) => {
     const main = document.querySelector('main');
     const activeTab = document.querySelector('nav button.active');
@@ -38,7 +55,7 @@ const switchTab = (clicked, tab, tabs) => {
             buildMenu(main);
             break;
         case tabs[2]:
-            buildHome(main);
+            buildContact(main);
             break;
         default:
             buildHome(main);
