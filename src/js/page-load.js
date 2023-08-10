@@ -4,29 +4,25 @@ const clearContainer = (container) => {
     }
 }
 
-const buildHeader = (container) => {
+const buildHeader = (container, ...tabs) => {   
     const header = document.createElement('header');
     const nav = document.createElement('nav');
-    const home = document.createElement('button');
-    home.id = 'home';
-    home.textContent = home.id.toUpperCase();
-    const menu = document.createElement('button');
-    menu.id = 'menu';
-    menu.textContent = menu.id.toUpperCase();
-    const contact = document.createElement('button');
-    contact.id = 'contact';
-    contact.textContent = contact.id.toUpperCase();
-    nav.appendChild(home);
-    nav.appendChild(menu);
-    nav.appendChild(contact);
+
+    tabs.forEach(tab => {
+        const button = document.createElement('button');
+        button.id = tab;
+        button.textContent = tab.toUpperCase();
+        nav.appendChild(button);
+    });
+
     header.appendChild(nav);
     container.appendChild(header);
 }
 
 const loadPage = (page) => {
-    const content = document.querySelector('#content');
-    clearContainer(content);
-    buildHeader(content);
+    const container = document.querySelector('body');
+    clearContainer(container);
+    buildHeader(container, 'home', 'menu', 'contact');
 }
 
 export { loadPage };
