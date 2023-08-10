@@ -31,22 +31,22 @@ const buildHeader = (container, ...tabs) => {
 }
 
 const buildHome = (container) => {
-    const main = document.createElement('main');
     const h1 = document.createElement('h1');
     h1.textContent = 'Welcome to Veggieterra';
     const about = document.createElement('p');
     about.id = 'about';
     about.textContent = 'If you enjoy eating your vegetables this is the restaurant for you!';
-    main.appendChild(h1);
-    main.appendChild(about);
-    container.appendChild(main);
+    container.appendChild(h1);
+    container.appendChild(about);
 }
 
 const loadPage = (page) => {
-    const container = document.querySelector('body');
-    clearContainer(container);
-    buildHeader(container, 'home', 'menu', 'contact');
-    buildHome(container);
+    const body = document.querySelector('body');
+    clearContainer(body);
+    buildHeader(body, 'home', 'menu', 'contact');
+    const main = document.createElement('main');
+    body.appendChild(main);
+    buildHome(main);
 }
 
 export { loadPage };
