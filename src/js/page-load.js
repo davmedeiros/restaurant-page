@@ -25,6 +25,7 @@ const buildHome = (container) => {
     h1.textContent = 'Welcome to Veggieterra';
     const about = document.createElement('p');
     about.id = 'about';
+    about.textContent = 'If you enjoy eating your vegetables this is the restaurant for you!';
     main.appendChild(h1);
     main.appendChild(about);
     container.appendChild(main);
