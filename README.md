@@ -1,2 +1,1 @@
-# restaurant-page
-TOP - Restaurant Page
+# TOP - Educational Project - Restaurant Page
